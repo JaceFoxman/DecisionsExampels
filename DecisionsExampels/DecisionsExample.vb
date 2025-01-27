@@ -27,7 +27,7 @@ Module DecisionsExample
             Console.WriteLine(variable1 > 4) 'true so it prints
         End If
 
-
+        'if anything evaluates to true all other evaluations are skipped
         If variable1 > 6 Then
             Console.WriteLine(variable1 > 6) 'false so it skips 
 
@@ -36,6 +36,36 @@ Module DecisionsExample
 
         ElseIf variable1 > 4 Then
             Console.WriteLine(variable1 > 4)
+        End If
+
+        'Adds previous variable1 value to new variable1 value
+        variable1 += 3
+
+        If variable1 > 6 Then
+            Console.WriteLine($"{variable1} is a big number")
+
+        ElseIf variable1 > 3 Then
+            Console.WriteLine($"sorry not tall enough..")
+
+        ElseIf variable1 > 4 Then
+            Console.WriteLine($"who cares")
+        Else
+            Console.WriteLine($"Not sure what happend")
+        End If
+
+        'Subtracts previous variable1 value to new variable1 value
+        variable1 -= 6
+
+        If variable1 > 6 Then
+            Console.WriteLine($"{variable1} is a big number")
+
+        ElseIf variable1 > 3 Then
+            Console.WriteLine($"sorry not tall enough..")
+
+        ElseIf variable1 > 4 Then
+            Console.WriteLine($"who cares")
+        Else
+            Console.WriteLine($"Not sure what happend") 'if none of the conditions evaluates to true the Else clause triggers
         End If
     End Sub
 
