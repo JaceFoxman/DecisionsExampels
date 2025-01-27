@@ -9,6 +9,7 @@ Module DecisionsExample
 
     Sub Main()
         Dim variable1 As Integer
+        Dim userInput As String
 
         'assign 5 to variable1
         variable1 = 5
@@ -67,6 +68,24 @@ Module DecisionsExample
         Else
             Console.WriteLine($"Not sure what happend") 'if none of the conditions evaluates to true the Else clause triggers
         End If
+
+        Console.WriteLine("Please enter your age: ")
+        userInput = Console.ReadLine
+        variable1 = CInt(userInput)
+        Select Case variable1
+            Case 0 To 3
+
+            Case 4 To 10
+
+            Case 11 To 64
+
+            Case 65 To 99
+
+            Case > 100
+
+            Case Else
+
+        End Select
     End Sub
 
 End Module
