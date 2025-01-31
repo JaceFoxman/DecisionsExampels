@@ -113,46 +113,132 @@ Module DecisionsExample
         '    Console.WriteLine($"in the Do, While loop: ")
         'Loop
 
-        For i As Integer = 1 To 10 Step 2
-            Console.WriteLine(i)
-        Next
-        Console.WriteLine(StrDup(80, "*"))
+        'For i As Integer = 1 To 10 Step 2
+        '    Console.WriteLine(i)
+        'Next
+        'Console.WriteLine(StrDup(80, "*"))
 
-        For i = 1 To 10 Step 0.5
-            Console.WriteLine(i)
-        Next
-        Console.WriteLine(StrDup(80, "*"))
+        'For i = 1 To 10 Step 0.5
+        '    Console.WriteLine(i)
+        'Next
+        'Console.WriteLine(StrDup(80, "*"))
 
-        For i = 1 To 10
-            Console.WriteLine(i)
-        Next
-        Console.WriteLine(StrDup(80, "*"))
+        'For i = 1 To 10
+        '    Console.WriteLine(i)
+        'Next
+        'Console.WriteLine(StrDup(80, "*"))
 
-        'nested for loop
-        For i = 1 To 10
+        ''nested for loop
+        'For i = 1 To 10
 
-            For j = 1 To 10
+        '    For j = 1 To 10
 
-                Console.Write(CStr(j + i).PadLeft(3) & " |")
+        '        Console.Write(CStr(j + i).PadLeft(3) & " |")
 
-            Next
+        '    Next
 
-            Console.WriteLine()
-        Next
+        '    Console.WriteLine()
+        'Next
 
-        Dim result As String
-        Console.WriteLine(StrDup(80, "*"))
+        'Dim result As String
+        'Console.WriteLine(StrDup(80, "*"))
 
-        For i = 1 To 10
+        'For i = 1 To 10
 
-            For j = 1 To 10
-                result = (i + j).ToString("C")
-                result = result.PadLeft(8)
-                Console.Write(result)
-            Next
+        '    For j = 1 To 10
+        '        result = (i + j).ToString("C")
+        '        result = result.PadLeft(8)
+        '        Console.Write(result)
+        '    Next
 
-            Console.WriteLine()
-        Next
+        '    Console.WriteLine()
+        'Next
+
+        Dim firstNumber As Integer
+        Dim getOutOfHere As Boolean = False
+
+        'Do
+        '    Console.WriteLine("In the first loop. loop while firstnumber <= 3")
+        '    firstNumber += 1
+        '    Console.WriteLine($"FirstNumber is {firstNumber}!")
+        '    Console.WriteLine()
+
+        'Loop While firstNumber <= 3
+
+        'Console.WriteLine()
+
+        'Do
+        '    Console.WriteLine("In the second loop. loop while firstnumber <= 3")
+        '    firstNumber += 1
+        '    Console.WriteLine($"FirstNumber is {firstNumber}!")
+        '    Console.WriteLine()
+
+        'Loop While firstNumber <= 3
+
+        'Console.WriteLine()
+
+        'Do Until firstNumber >= 3
+        '    Console.WriteLine("In the third loop. loop while firstnumber <= 3")
+        '    firstNumber += 1
+        '    Console.WriteLine($"FirstNumber is {firstNumber}!")
+        '    Console.WriteLine()
+        'Loop
+
+        'Console.WriteLine()
+
+        'Do While firstNumber >= 3
+        '    Console.WriteLine("In the fourth loop. loop while firstnumber <= 3")
+        '    firstNumber -= 1
+        '    Console.WriteLine($"FirstNumber is {firstNumber}!")
+        '    Console.WriteLine()
+        'Loop
+
+        'Console.WriteLine()
+
+        Do
+            Console.WriteLine("Enter a number 1")
+            Console.WriteLine("Enter Q to quit")
+            userInput = Console.ReadLine()
+            Console.WriteLine($"You entered {userInput}")
+            'Console.Clear()
+            Try
+                firstNumber = CInt(userInput)
+                getOutOfHere = True
+
+            Catch ex As Exception
+
+                If userInput <> "Q" Then
+                    Console.WriteLine("Please enter a whole number")
+                Else
+                    getOutOfHere = True
+                End If
+
+            End Try
+
+        Loop Until getOutOfHere = True
+
+        getOutOfHere = False
+
+        Do While userInput <> "Q" And getOutOfHere = False
+            Console.WriteLine("Enter a number 2")
+            Console.WriteLine("Enter Q to quit")
+            userInput = Console.ReadLine()
+            Console.WriteLine($"You entered {userInput}")
+            'Console.Clear()
+            Try
+                firstNumber = CInt(userInput)
+                getOutOfHere = True
+
+            Catch ex As Exception
+
+                If userInput <> "Q" Then
+                    Console.WriteLine("Please enter a whole number")
+                Else
+                    getOutOfHere = True
+                End If
+
+            End Try
+        Loop
     End Sub
 
 End Module
